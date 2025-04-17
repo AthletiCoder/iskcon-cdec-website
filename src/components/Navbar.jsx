@@ -1,21 +1,77 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useLocation, Link } from "react-router-dom";
 
-export default function Navbar() {
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Learn Gita", path: "/gita" },
+    { name: "Events", path: "/events" },
+    { name: "Schedule", path: "/schedule" },
+    { name: "Service", path: "/service" },
+    { name: "Donate", path: "/donate" },
+  ];
+
   return (
-    <nav className="glasmorphic text-white py-4 px-6 fixed top-0 left-0 w-full z-50 flex justify-between items-center shadow-md backdrop-blur-lg">
-      <div className="text-xl font-bold tracking-wide">
-        ISKCON <span className="text-orange-400">CDEC</span>
+    <header className="shadow-md fixed top-0 left-0 w-full z-50">
+      <div className="glasmorphic max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="text-xl font-bold text-orange-600">
+          ISKCON CDEC
+        </Link>
+
+        {/* Hamburger Icon */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-700 focus:outline-none"
+        >
+          {isOpen ? (
+            <XMarkIcon className="h-6 w-6" />
+          ) : (
+            <Bars3Icon className="h-6 w-6" />
+          )}
+        </button>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-100">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`transition-colors ${
+                currentPath === item.path ? "text-orange-600 font-semibold" : "hover:text-orange-600"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
       </div>
-      <div className="space-x-6 text-sm sm:text-base font-medium">
-        <Link to="/" className="hover:text-orange-400 transition-colors">Home</Link>
-        <Link to="/gita" className="hover:text-orange-400 transition-colors">Learn Gita</Link>
-        <Link to="/events" className="hover:text-orange-400 transition-colors">Events</Link>
-        <Link to="/gallery" className="hover:text-orange-400 transition-colors">Gallery</Link>
-        <Link to="/donate" className="hover:text-orange-400 transition-colors">Donate</Link>
-        <Link to="/service" className="hover:text-orange-400 transition-colors">Serivce</Link>
-        <Link to="/schedule" className="hover:text-orange-400 transition-colors">Schedule</Link>
-      </div>
-    </nav>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2 shadow">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className={`block text-sm font-medium ${
+                currentPath === item.path ? "text-orange-600 font-semibold" : "text-gray-700 hover:text-orange-600"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </header>
   );
-}
+};
+
+export default Navbar;
