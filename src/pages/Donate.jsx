@@ -40,12 +40,40 @@ const Donate = () => {
         </div>
 
         {/* Right: Image Collage */}
-        <div className="grid grid-cols-2 gap-4">
-          <img src="/images/donate/annamrita.jpg" alt="Annamrita" className="rounded-lg shadow-md" />
-          <img src="/images/donate/youth.jpg" alt="Youth Program" className="rounded-lg shadow-md" />
-          <img src="/images/donate/temple.jpg" alt="Temple Maintenance" className="rounded-lg shadow-md" />
-          <img src="/images/donate/volunteers.jpg" alt="Volunteers" className="rounded-lg shadow-md" />
+        {/* Photos with captions */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Food Distribution",
+              desc: "Feeding hundreds with sanctified meals daily.",
+              img: "/images/donate/annamrita.png"
+            },
+            {
+              title: "Youth Sessions",
+              desc: "Empowering students with values and purpose.",
+              img: "/images/donate/temple.png"
+            },
+            {
+              title: "Temple Maintenance",
+              desc: "Maintaining the sacred atmosphere for all.",
+              img: "/images/donate/youth.png"
+            },
+            {
+              title: "Volunteers",
+              desc: "Maintaining the sacred atmosphere for all.",
+              img: "/images/donate/volunteers.png"
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="glasmorphic rounded overflow-hidden shadow-sm bg-white">
+              <img src={item.img} alt={item.title} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h4 className="font-semibold text-gray-100">{item.title}</h4>
+                <p className="text-sm text-gray-400 ">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   );
