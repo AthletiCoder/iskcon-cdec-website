@@ -8,7 +8,6 @@ const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Learn Gita", path: "/gita" },
@@ -19,12 +18,14 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="glasmorphic max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-orange-600">
-          ISKCON CDEC
+    <header className="fixed top-0 left-0 w-full z-50">
+      <div className="shadow-md glasmorphic max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logo-white.png" alt="ISKCON CDEC" className="h-10 w-auto" />
+          <span className="text-xl text-white">ISKCON CDEC</span>
         </Link>
 
+        
         {/* Hamburger Icon */}
         <button
           onClick={() => setIsOpen(!isOpen)}

@@ -47,11 +47,11 @@ const Gita = () => {
 
 
   return (
-    <div className="pt-28 px-4 text-white min-h-screen">
+    <div className="pt-20 px-4 text-white min-h-screen">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-6 text-orange-400">Learn Bhagavad Gita</h2>
+        <h2 className="text-3xl font-bold text-center mb-3 text-orange-600">Learn Bhagavad Gita</h2>
 
-        <p className="text-center text-slate-300 mb-10">
+        <p className="text-center text-slate-100 mb-5">
           Explore our weekly sessions that help you understand the timeless wisdom of the Gita in a practical, modern context.
         </p>
 
