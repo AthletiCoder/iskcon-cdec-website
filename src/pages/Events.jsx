@@ -72,7 +72,7 @@ const Events = () => {
                 />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-orange-600 mb-2">{program.title}</h3>
-                  <p className="text-gray-200 mb-4">{program.description}</p>
+                  <p className="dark:text-gray-200 mb-4">{program.description}</p>
 
                   {/* Speaker */}
                   <div className="flex items-center gap-4 mb-4">
@@ -82,8 +82,8 @@ const Events = () => {
                       className="w-12 h-12 rounded-full object-cover border"
                     />
                     <div>
-                      <p className="text-sm font-semibold text-gray-100">{program.speaker.name}</p>
-                      <p className="text-xs text-gray-300">{program.speaker.role}</p>
+                      <p className="text-sm font-semibold text-black dark:text-gray-100">{program.speaker.name}</p>
+                      <p className="text-xs text-black dark:text-gray-300">{program.speaker.role}</p>
                     </div>
                   </div>
 

@@ -21,8 +21,9 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 w-full z-50">
       <div className="shadow-md glasmorphic max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo-white.png" alt="ISKCON CDEC" className="h-10 w-auto" />
-          <span className="text-xl text-white">ISKCON CDEC</span>
+          <img src="/logo-black.png" className="h-10 w-auto dark:hidden" alt="ISKCON CDEC" />
+          <img src="/logo-white.png" className="h-10 w-auto hidden dark:block" alt="ISKCON CDEC" />
+          <span className="text-xl text-black dark:text-white">ISKCON CDEC</span>
         </Link>
 
         
@@ -51,12 +52,20 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              document.documentElement.classList.toggle("dark");
+            }}
+            className="text-sm px-3 py-1 border rounded text-gray-800 dark:text-gray-100 border-gray-100 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+          >
+            Toggle Theme
+          </button>
         </nav>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2 shadow">
+        <div className="md:hidden bg-white dark:bg-white border-t border-gray-200 px-4 py-4 space-y-2 shadow">
           {navItems.map((item) => (
             <Link
               key={item.name}

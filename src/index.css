@@ -19,6 +19,15 @@ body {
   padding: 0;
 }
 
+.dark body {
+  background: linear-gradient(135deg, #efefef, #e7e7e7);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 /* Glasmorphism */
 .glasmorphic {
   background: rgba(255, 255, 255, 0.1);
