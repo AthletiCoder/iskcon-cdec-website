@@ -33,5 +33,6 @@
     "globals": "^15.15.0",
     "postcss": "^8.5.3",
     "vite": "^6.2.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

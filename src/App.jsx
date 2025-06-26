@@ -9,6 +9,8 @@ import Service from "./pages/Service";
 import Schedule from "./pages/Schedule";
 import NotFound from "./pages/NotFound";
 import Donate from "./pages/Donate";
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentFailure from './pages/PaymentFailure';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="/payment-failed" element={<PaymentFailure />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
