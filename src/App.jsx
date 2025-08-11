@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Donate from "./pages/Donate";
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailure from './pages/PaymentFailure';
+import RedirectToExternal from "./components/RedirectToExternal";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/service" element={<Service />} />
           <Route path="/schedule" element={<Schedule />} />
-          <Route path="/donate" element={<Donate />} />
+          {/* <Route path="/donate" element={<Donate />} /> */}
+          <Route path="/donate" element={<RedirectToExternal to="https://erp.iskconcdec.com/donate" />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/payment-failed" element={<PaymentFailure />} />
           <Route path="*" element={<NotFound />} />

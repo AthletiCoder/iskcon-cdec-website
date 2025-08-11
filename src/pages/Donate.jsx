@@ -137,7 +137,7 @@ const Donate = () => {
               <input
                 type="text"
                 id="fullName"
-                className="w-full border border-gray-500 rounded px-3 py-2 text-gray-800"
+                className="w-full border border-gray-500 rounded px-3 py-2 text-gray-100"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
@@ -149,7 +149,7 @@ const Donate = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full border border-gray-500 rounded px-3 py-2 text-gray-800"
+                className="w-full border border-gray-500 rounded px-3 py-2 text-gray-100"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -161,7 +161,7 @@ const Donate = () => {
               <input
                 type="number"
                 id="amount"
-                className="w-full border border-gray-500 rounded px-3 py-2 text-gray-800"
+                className="w-full border border-gray-500 rounded px-3 py-2 text-gray-100"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 required
@@ -185,11 +185,6 @@ const Donate = () => {
             )}
           </form>
 
-          {/* UPI QR Code */}
-          <div className="mt-8 text-center">
-            <p className="text-sm text-gray-100 mb-2">Prefer UPI?</p>
-            <img src="/qr.png" alt="UPI QR Code" className="mx-auto w-40 rounded" />
-          </div>
         </div>
 
         {/* Right: Image Collage */}

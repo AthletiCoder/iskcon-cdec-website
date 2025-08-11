@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 const sundaySchedule = [
-  { time: "5:00 PM", activity: "Bhajans" },
-  { time: "6:00 PM", activity: "Spiritual Discourse" },
-  { time: "7:30 PM", activity: "Aarti & Kirtan" },
-  { time: "8:00 PM", activity: "Prasadam (Dinner)" },
+  { time: "4:30 AM", activity: "Japa Meditation" },
+  { time: "6:30 AM", activity: "Srimad Bhagavatam Reading Circle" },
+  { time: "7:00 AM", activity: "Japa Meditation" },
+  { time: "8:10 AM", activity: "Guru Puja" },
+  { time: "9:00 AM", activity: "Breakfast Prasadam" },
 ];
 
 const weekdaySchedule = [
-  { time: "4:30 AM", activity: "Mangala Aarti" },
-  { time: "5:15 AM", activity: "Japa Meditation" },
-  { time: "7:15 AM", activity: "Darshan Aarti" },
-  { time: "7:45 AM", activity: "Guru Puja" },
-  { time: "8:00 AM", activity: "Srimad Bhagavatam Class" },
+  { time: "4:30 AM", activity: "Japa Meditation" },
+  { time: "7:00 AM", activity: "Srimad Bhagavatam Class" },
+  { time: "7:50 AM", activity: "Mangala Aarti" },
+  { time: "8:10 AM", activity: "Guru Puja" },
   { time: "9:00 AM", activity: "Breakfast Prasadam" },
 ];
 
